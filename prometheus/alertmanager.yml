@@ -2,7 +2,7 @@ global:
   # Also possible to place this URL in a file.
   # Ex: `slack_api_url_file: '/etc/alertmanager/slack_url'`
   resolve_timeout: 1m
-  slack_api_url: 'https://hooks.slack.com/services/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'
+  slack_api_url: 'https://hooks.slack.com/services/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'
 
 route:
   receiver: 'slack-notifications'
