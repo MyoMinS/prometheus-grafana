@@ -11,6 +11,6 @@ route:
 receivers:
 - name: 'slack-notifications'
   slack_configs:
-  - channel: '#aws_event_monitor'
+  - channel: '#awseventmonitor'
    # text: 'https://internal.myorg.net/wiki/alerts/{{ .GroupLabels.app }}/{{ .GroupLabels.alertname }}'
     send_resolved : true
