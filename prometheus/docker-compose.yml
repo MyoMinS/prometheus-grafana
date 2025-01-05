@@ -14,6 +14,18 @@ services:
     depends_on:
       - node-exporter
       - cadvisor
+      - alertmanager
+    networks:
+      - monitoring
+  
+  alertmanager:
+    image: prom/alertmanager:latest
+    container_name: alertmanager
+    restart: unless-stopped
+    ports:
+      - 9093:9093
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
     networks:
       - monitoring
 

@@ -8,6 +8,12 @@ global:
 rule_files:
   - 'prometheus.rules.yml'
 
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - alertmanager:9093
+
 scrape_configs:
   - job_name: 'prometheus'
     scrape_interval: 5s
@@ -24,3 +30,5 @@ scrape_configs:
     static_configs:
       - targets:
           - cadvisor:8080
+        labels:
+          group : app
