@@ -2,15 +2,15 @@ global:
   # Also possible to place this URL in a file.
   # Ex: `slack_api_url_file: '/etc/alertmanager/slack_url'`
   resolve_timeout: 1m
-  slack_api_url: 'https://hooks.slack.com/services/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'
+  slack_api_url: 'https://hooks.slack.com/services/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'
 
 route:
   receiver: 'slack-notifications'
- # group_by: [alertname, datacenter, app]
+  group_by: [alertname, datacenter, app]
 
 receivers:
 - name: 'slack-notifications'
   slack_configs:
   - channel: '#awseventmonitor'
-   # text: 'https://internal.myorg.net/wiki/alerts/{{ .GroupLabels.app }}/{{ .GroupLabels.alertname }}'
+    text: 'https://internal.myorg.net/wiki/alerts/{{ .GroupLabels.app }}/{{ .GroupLabels.alertname }}'
     send_resolved : true
